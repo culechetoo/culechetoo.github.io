@@ -1,0 +1,40 @@
+
+{% include base_path %}
+
+<div class="{{ include.type | default: "list" }}__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h3>{{ post.title }}</h3>
+    <p>
+      {% for author in post.authors %}
+        {% if author == "Chaitanya Agarwal" %}
+        <i>{{ author }}</i>{% if forloop.last %}{% else %},{% endif %}
+        {% else %}
+        {{ author }}{% if forloop.last %}{% else %},{% endif %}
+        {% endif %}
+      {% endfor %} <br>
+      
+      {% if post.venue %}
+      {{ post.venue }} <br>
+      {% endif %}
+
+      {% if post.notes %}
+      <font color="green">{{ post.notes }}</font> <br>
+      {% endif %}
+
+      {% if post.paperurl %}
+      <a href="{{ post.paperurl }}">Paper</a>
+      {% endif %}
+      {% if post.slidesurl %}
+      <a href="{{ post.slidesurl }}">Slides</a>
+      {% endif %}
+      {% if post.codeurl %}
+      <a href="{{ post.codeurl }}">Code</a>
+      {% endif %}
+      {% if post.extendedurl %}
+      <a href="{{ post.extendedurl }}">Extended Version</a>
+      {% endif %}
+    </p>
+
+  </article>
+</div>

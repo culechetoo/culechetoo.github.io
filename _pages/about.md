@@ -11,4 +11,21 @@ I am a 2nd year computer science PhD student at the Courant Institute of Mathema
 
 In the past I have worked with [Thomas Wies](https://cs.nyu.edu/~wies/) and [Eric Koskinen](https://www.erickoskinen.com/#/) on developing an abstract-interpretation analysis for verifying certain temporal properties of recursive, higher-order programs.
 
-During a remote internship at TIFR, with [Shibashis Guha](https://www.tifr.res.in/shibashis.guha/), I also worked on developing statistical-model-checking techniques to verify properites for discrete- and continuous-time markov decision processes.
+During a remote internship at TIFR, with [Shibashis Guha](https://www.tifr.res.in/shibashis.guha/), I also worked on developing statistical-model-checking techniques to estimate certain LTL objectives for discrete- and continuous-time markov decision processes.
+<br><br>
+
+<h1>Preprints</h1>
+{% for post in site.publications reversed %}
+  {% if post.category != "preprints" %}
+    {% continue %}
+  {% endif %}
+  {% include archive-single-simple.html %}
+{% endfor %}
+
+<h1>Publications</h1>
+{% for post in site.publications reversed %}
+  {% if post.category != "conferences" %}
+    {% continue %}
+  {% endif %}
+  {% include archive-single-simple.html %}
+{% endfor %}
