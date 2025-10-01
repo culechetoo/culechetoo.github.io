@@ -14,7 +14,16 @@ In the past I have worked with [Thomas Wies](https://cs.nyu.edu/~wies/) and [Eri
 During a remote internship at TIFR, with [Shibashis Guha](https://www.tifr.res.in/shibashis.guha/), I also worked on developing statistical-model-checking techniques to estimate certain LTL objectives for discrete- and continuous-time markov decision processes.
 <br><br>
 
+{% assign has_preprints = false %}
+{% for post in site.publications %}
+  {% if post.category == "preprints" %}
+    {% assign has_preprints = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% if has_preprints %}
 <h1>Preprints</h1>
+{% endif %}
 {% for post in site.publications reversed %}
   {% if post.category != "preprints" %}
     {% continue %}
